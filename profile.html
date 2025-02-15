@@ -1,0 +1,211 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/x.icon" href="images/Home/logo with a border.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>User dashboard</title>
+    <style>
+        
+        .profile-section {
+            text-align: left;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .profile-section h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .profile-card {
+            background-color: #FFCC63;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .profile-card span {
+            font-weight: bold;
+        }
+
+        .add-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .add-link:hover {
+            text-decoration: underline;
+        }
+        
+
+        /* Responsive styling */
+        /* Editable fields container */
+        .edit-container {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Input fields */
+        .edit-container input {
+            padding: 8px 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+            box-sizing: border-box;
+        }
+
+        /* Save button */
+        .edit-container button {
+            padding: 8px 15px;
+            font-size: 1rem;
+            background-color: #F58340;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Link styling for +Add or Edit */
+        .edit-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .edit-link:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .edit-container input {
+                width: 100%;
+            }
+
+            .edit-container button {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+       <nav class="navbar">
+            <ul class="sidebar">
+                    <li onclick="hidesidebar()"><a ><img src="images/Home/logo.png" alt="main logo" height="auto" width="100%"></a></li>       
+                </ul>
+                <ul>
+                    <li><a href="index.html"><img src="images/Home/logo.png" alt="main logo" height="50" width="100%"></a></li><!--this is use in desktop-->
+                    
+                    <li></a></li>
+                    <div class="profile-icon" onclick="toggleDropdown()">
+                        <a href="#"><img src="images/Home/user.png" alt="User icon image" height="26" width="26"></a>
+                    </div>
+                    <div id="dropdown" class="dropdown-menu">
+                        <a href="profile.html">Profile</a>
+                        <a href="index.html">Logout</a>
+                    </div>
+                    <li ><a><img src="images/Home/searchIcon.png" alt="cart icon image" height="26" width="26"></a></li>
+                    <li class="menu-button" onclick=showsidebar()><a><img src="images\Home\menu_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" alt="menu" height="26" width="26"></a></li>
+                </ul>
+        </nav>
+    </header><br>
+    <section class="profile-section">
+        <h1>Profile</h1>
+        <div class="profile-card">
+            <p>
+                <span>Name:</span>
+                <span id="name-display"> <a href="#" class="edit-link" onclick="editField('name')">+Add</a></span>
+            </p>
+            <div id="name-edit" class="edit-container" style="display: none;">
+                <input type="text" id="name-input" placeholder="Enter your name">
+                <button onclick="saveField('name')">Save</button>
+            </div><br><br>
+    
+            <p>
+                <span>Email:</span>
+                <span id="email-display"> example@gmail.com <a href="#" class="edit-link" onclick="editField('email')">Edit</a></span>
+            </p>
+            <div id="email-edit" class="edit-container" style="display: none;">
+                <input type="email" id="email-input" placeholder="Enter your email">
+                <button onclick="saveField('email')">Save</button>
+            </div><br><br>
+    
+            <p>
+                <span>Address:</span>
+                <span id="address-display"> <a href="#" class="edit-link" onclick="editField('address')">+Add</a></span>
+            </p>
+            <div id="address-edit" class="edit-container" style="display: none;">
+                <input type="text" id="address-input" placeholder="Enter your address">
+                <button onclick="saveField('address')">Save</button>
+            </div><br><br>
+        </div>
+    </section>
+    
+    <footer>
+        
+            <div id="extrPages">
+                &copy; </a><div class="extrPages"><a href="Vintage Summer">.Vintage Summer</a></div>
+                <div class="extrPages"><a href="Refund policy.html">.Refund policy</a></div>
+                <div class="extrPages"><a href="Privacy Policy.html">.Privercy policy</a></div>
+                <div class="extrPages"><a href="Terms of Service">.Terms of service</a></div>
+            </div>
+            <div>
+                <div class="sm">
+                    <img src="images/Home/instagram.png" alt="instagram icon"  width="50px" height="50px"  >
+                </div>
+                <div class="sm">
+                    <img src="images/Home/facebook.png" alt="instagram icon" width="50px" height="50px"  >
+                </div>
+                </div>
+                <div class="sm">
+                    <img src="images/Home/whatsapp.png" alt="instagram icon" width="50px" height="50px"  >
+                </div>
+                </div>
+            </div>
+    </footer>
+
+    <script>
+        function editField(field) {
+    // Hide display and show edit field
+    document.getElementById(`${field}-display`).style.display = 'none';
+    document.getElementById(`${field}-edit`).style.display = 'block';
+}
+
+function saveField(field) {
+    const input = document.getElementById(`${field}-input`);
+    const value = input.value;
+
+    if (value.trim() === '') {
+        alert('Field cannot be empty!');
+        return;
+    }
+
+    // Update display
+    document.getElementById(`${field}-display`).innerHTML = `
+        ${value} <a href="#" class="edit-link" onclick="editField('${field}')">Edit</a>
+    `;
+
+    // Hide edit field and show updated display
+    document.getElementById(`${field}-edit`).style.display = 'none';
+    document.getElementById(`${field}-display`).style.display = 'block';
+}
+
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

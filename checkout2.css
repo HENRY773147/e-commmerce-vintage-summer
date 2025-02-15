@@ -1,0 +1,25 @@
+.order-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.order-summary-table thead tr {
+    background-color: #F58340;
+    color: white;
+}
+
+.order-summary-table th, .order-summary-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.order-summary-table tbody tr:nth-child(even) {
+    background-color: #FFCC63;
+}
+
+.order-summary-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
